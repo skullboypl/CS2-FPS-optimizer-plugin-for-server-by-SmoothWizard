@@ -15,7 +15,6 @@ The plugin employs an aggressive **entity cleanup** strategy at the start of eve
     * **Decals** (Bullet holes, blood splatters, sprays).
     * **Map Junk** (`prop_physics`, bottles, cans, dynamic props).
 * **Clear Notifications:** Provides a consolidated, colorful chat notification showing players the total number of entities cleaned up.
-* **Admin Control:** Allows administrators to dynamically toggle the optimization on or off while the server is running.
 
 ## ⚙️ Installation
 
