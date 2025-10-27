@@ -22,6 +22,10 @@ The plugin employs an aggressive **entity cleanup** strategy at the start of eve
 1.  **Metamod:Source** installed for CS2.
 2.  **CounterStrikeSharp (CSSHarp)** framework installed.
 
+### Before and after on Train 
+<img width="330" height="109" alt="567069473_1475568960377879_9192262773945323278_n" src="https://github.com/user-attachments/assets/a2f5941b-080f-46f4-abc2-859496613cff" />
+<img width="320" height="62" alt="566555109_1159235275631818_439753922021541332_n" src="https://github.com/user-attachments/assets/c9a1d0ae-f51d-4699-9c18-6eb31ca53027" />
+
 ### Installation Steps
 1.  Download the latest version of the plugin (`SmoothWizardOptimizer.dll`) from the [Releases](https://github.com/TwojaNazwaUżytkownika/NazwaRepozytorium/releases) section.
 2.  Create a folder named `SmoothWizardOptimizer` inside your CSSHarp plugins directory:
