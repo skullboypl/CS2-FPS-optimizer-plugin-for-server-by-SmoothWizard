@@ -32,25 +32,10 @@ The plugin employs an aggressive **entity cleanup** strategy at the start of eve
 3.  Place the downloaded `SmoothWizardOptimizer.dll` file inside this new folder.
 4.  Start (or restart) your CS2 server.
 
-## 🖥️ Administrative Commands
+## 🖥️ Command to disable optimizer or enable
 
 The plugin uses the CSSHarp permission system for feature control.
 
 | Command | Description | Required Permission |
 | :--- | :--- | :--- |
-| `css_sw_toggle` | Toggles the automatic entity cleanup on or off. | `sw_optimizer_admin` |
-
-### Permission Configuration
-
-For administrators to use the `css_sw_toggle` command, you must grant them the `sw_optimizer_admin` permission in your CSSHarp permission configuration files (usually in a JSON format).
-
-Example of granting permission to an admin group:
-
-```json
-{
-  "GroupName": "admin",
-  "Permissions": [
-    // ... other permissions
-    "sw_optimizer_admin"
-  ]
-}
+| `css_sw_toggle` | Toggles the automatic entity cleanup on or off or on chat !sw_toggle
