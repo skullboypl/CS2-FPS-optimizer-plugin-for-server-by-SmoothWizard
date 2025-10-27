@@ -1,4 +1,5 @@
 # 🚀 SmoothWizard Server Optimizer (CSSHarp)
+# [INFO WEBSITE (EN/PL)](https://smoothwizard.com/cs2-fps-optimization-plugin-smoothwizard-server-cleaner-reduce-lag/)
 
 ## About the Project
 
