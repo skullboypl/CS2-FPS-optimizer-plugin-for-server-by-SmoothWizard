@@ -44,6 +44,10 @@ The plugin employs an aggressive **entity cleanup** strategy at the start of eve
 
 The plugin uses the CSSHarp permission system for feature control.
 
-| Command | Description | Required Permission |
-| :--- | :--- | :--- |
-| `css_sw_toggle` | Toggles the automatic entity cleanup on or off or on chat !sw_toggle
+### Commands
+
+| Command           | Description                                                        | Required Permission |
+| :---------------- | :----------------------------------------------------------------- | :------------------ |
+| `css_sw_toggle`   | Toggles the automatic entity cleanup on or off (`!sw_toggle` in chat) | None Yet         |
+| `css_sw_clear`    | Starts the entity removal loop (debug mode)                        | None Yet         |
+| `css_sw_stop`     | Stops the entity removal loop (debug mode)           
