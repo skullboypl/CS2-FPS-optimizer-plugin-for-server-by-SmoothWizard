@@ -1,0 +1,10 @@
+{
+  "optimizer.cleared.console": "[SmoothWizard Optimizer] [{0}] 掃除完了。削除したエンティティ: {1}",
+  "optimizer.cleared.chat": "[{red}SmoothWizard Server Optimizer{default}] 掃除が終わりました。ゴミとエフェクトを {green}{0}{default} 個消しました。",
+  "optimizer.toggle.on": "[{green}SW Optimizer{default}] サーバー最適化は現在: {green}オン{default}",
+  "optimizer.toggle.off": "[{green}SW Optimizer{default}] サーバー最適化は現在: {red}オフ{default}",
+  "optimizer.debug.finished": "[{red}SmoothWizard{default}] 削除ループが終わりました。",
+  "optimizer.debug.started": "[{red}SmoothWizard{default}] {0} 個のエンティティを削除中。止めるには css_sw_stop。",
+  "optimizer.debug.stopped": "[{red}SmoothWizard{default}] 削除ループを止めました。",
+  "optimizer.debug.empty": "[{red}SmoothWizard{default}] 消すエンティティがありません。"
+}

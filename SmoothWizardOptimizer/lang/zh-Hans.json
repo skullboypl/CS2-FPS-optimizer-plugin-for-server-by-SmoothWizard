@@ -1,0 +1,10 @@
+{
+  "optimizer.cleared.console": "[SmoothWizard Optimizer] [{0}] 已清理。移除实体：{1}",
+  "optimizer.cleared.chat": "[{red}SmoothWizard Server Optimizer{default}] 清理完成。已移除 {green}{0}{default} 个垃圾和特效。",
+  "optimizer.toggle.on": "[{green}SW Optimizer{default}] 服务器优化现已：{green}开启{default}",
+  "optimizer.toggle.off": "[{green}SW Optimizer{default}] 服务器优化现已：{red}关闭{default}",
+  "optimizer.debug.finished": "[{red}SmoothWizard{default}] 实体删除循环已结束。",
+  "optimizer.debug.started": "[{red}SmoothWizard{default}] 开始删除 {0} 个实体。停止命令：css_sw_stop。",
+  "optimizer.debug.stopped": "[{red}SmoothWizard{default}] 实体删除循环已停止。",
+  "optimizer.debug.empty": "[{red}SmoothWizard{default}] 没有可删除的实体。"
+}

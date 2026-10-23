@@ -1,0 +1,10 @@
+{
+  "optimizer.cleared.console": "[SmoothWizard Optimizer] [{0}] Ryddet op. Fjernede objekter: {1}",
+  "optimizer.cleared.chat": "[{red}SmoothWizard Server Optimizer{default}] Oprydning færdig. Fjernede {green}{0}{default} skrald og effekter.",
+  "optimizer.toggle.on": "[{green}SW Optimizer{default}] Serveroptimering er nu: {green}TIL{default}",
+  "optimizer.toggle.off": "[{green}SW Optimizer{default}] Serveroptimering er nu: {red}FRA{default}",
+  "optimizer.debug.finished": "[{red}SmoothWizard{default}] Fjernelsesløkken er færdig.",
+  "optimizer.debug.started": "[{red}SmoothWizard{default}] Fjerner {0} objekter. Stop med css_sw_stop.",
+  "optimizer.debug.stopped": "[{red}SmoothWizard{default}] Fjernelsesløkken er stoppet.",
+  "optimizer.debug.empty": "[{red}SmoothWizard{default}] Ingen objekter at fjerne."
+}

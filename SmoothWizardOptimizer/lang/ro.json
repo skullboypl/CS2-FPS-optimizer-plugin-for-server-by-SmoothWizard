@@ -1,0 +1,10 @@
+{
+  "optimizer.cleared.console": "[SmoothWizard Optimizer] [{0}] Curățare gata. Obiecte scoase: {1}",
+  "optimizer.cleared.chat": "[{red}SmoothWizard Server Optimizer{default}] Curățarea s-a terminat. Au fost scoase {green}{0}{default} gunoaie și efecte.",
+  "optimizer.toggle.on": "[{green}SW Optimizer{default}] Optimizarea serverului este acum: {green}PORNITĂ{default}",
+  "optimizer.toggle.off": "[{green}SW Optimizer{default}] Optimizarea serverului este acum: {red}OPRITĂ{default}",
+  "optimizer.debug.finished": "[{red}SmoothWizard{default}] Bucla de ștergere s-a terminat.",
+  "optimizer.debug.started": "[{red}SmoothWizard{default}] Se șterg {0} obiecte. Oprește cu css_sw_stop.",
+  "optimizer.debug.stopped": "[{red}SmoothWizard{default}] Bucla de ștergere a fost oprită.",
+  "optimizer.debug.empty": "[{red}SmoothWizard{default}] Nu există obiecte de șters."
+}

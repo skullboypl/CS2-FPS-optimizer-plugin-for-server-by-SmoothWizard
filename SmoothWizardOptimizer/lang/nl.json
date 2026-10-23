@@ -1,0 +1,10 @@
+{
+  "optimizer.cleared.console": "[SmoothWizard Optimizer] [{0}] Opgeruimd. Verwijderde objecten: {1}",
+  "optimizer.cleared.chat": "[{red}SmoothWizard Server Optimizer{default}] Opruimen klaar. {green}{0}{default} rommel en effecten weg.",
+  "optimizer.toggle.on": "[{green}SW Optimizer{default}] Serveroptimalisatie staat nu: {green}AAN{default}",
+  "optimizer.toggle.off": "[{green}SW Optimizer{default}] Serveroptimalisatie staat nu: {red}UIT{default}",
+  "optimizer.debug.finished": "[{red}SmoothWizard{default}] Verwijderlus is klaar.",
+  "optimizer.debug.started": "[{red}SmoothWizard{default}] Bezig met verwijderen van {0} objecten. Stop met css_sw_stop.",
+  "optimizer.debug.stopped": "[{red}SmoothWizard{default}] Verwijderlus gestopt.",
+  "optimizer.debug.empty": "[{red}SmoothWizard{default}] Geen objecten om te verwijderen."
+}

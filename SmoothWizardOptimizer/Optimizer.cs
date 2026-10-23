@@ -1,5 +1,6 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Core.Translations;
 using CounterStrikeSharp.API.Modules.Events;
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Timers; 
@@ -13,7 +14,7 @@ namespace SmoothWizardOptimizer
     public class SmoothWizardOptimizer : BasePlugin
     {
         public override string ModuleName => "SmoothWizard Server Optimizer";
-        public override string ModuleVersion => "1.1.0";
+        public override string ModuleVersion => "1.1.1";
         public override string ModuleAuthor => "SkullMedia Artur Spychalski";
 
         private bool isOptimizationEnabled = true;
@@ -105,10 +106,40 @@ namespace SmoothWizardOptimizer
         {
             isOptimizationEnabled = !isOptimizationEnabled;
             PublishState(info);
-            if (player is { IsValid: true })
+            if (player is { IsValid: true, IsBot: false })
             {
-                player.PrintToChat(Localizer[isOptimizationEnabled ? "optimizer.toggle.on" : "optimizer.toggle.off"]);
+                ChatToPlayer(player, isOptimizationEnabled ? "optimizer.toggle.on" : "optimizer.toggle.off");
             }
+        }
+
+        private void ChatToPlayer(CCSPlayerController player, string key, params object[] args)
+        {
+            player.PrintToChat(args.Length == 0
+                ? Localizer.ForPlayer(player, key)
+                : Localizer.ForPlayer(player, key, args));
+        }
+
+        private void ChatAll(string key, params object[] args)
+        {
+            foreach (var player in Utilities.GetPlayers())
+            {
+                if (player is not { IsValid: true, IsBot: false })
+                    continue;
+                ChatToPlayer(player, key, args);
+            }
+        }
+
+        private void Reply(CCSPlayerController? player, CommandInfo info, string key, params object[] args)
+        {
+            if (player is { IsValid: true, IsBot: false })
+            {
+                info.ReplyToCommand(args.Length == 0
+                    ? Localizer.ForPlayer(player, key)
+                    : Localizer.ForPlayer(player, key, args));
+                return;
+            }
+
+            info.ReplyToCommand(args.Length == 0 ? Localizer[key] : Localizer[key, args]);
         }
 
         private void OnStopClearLoopCommand(CCSPlayerController? player, CommandInfo info)
@@ -117,7 +148,7 @@ namespace SmoothWizardOptimizer
             debugTimer?.Kill();
             debugTimer = null;
             entitiesToClearQueue.Clear();
-            info.ReplyToCommand("Stopped entity removal debug loop (css_sw_dclear).");
+            Reply(player, info, "optimizer.debug.stopped");
             Server.PrintToConsole("[SW DEBUG] Stopped entity removal loop.");
         }
 
@@ -146,12 +177,12 @@ namespace SmoothWizardOptimizer
 
             if (entitiesToClearQueue.Count == 0)
             {
-                info.ReplyToCommand("No entities found for removal in the debug loop list.");
+                Reply(player, info, "optimizer.debug.empty");
                 return;
             }
 
             clearLoopActive = true;
-            info.ReplyToCommand(Localizer["optimizer.debug.started", entitiesToClearQueue.Count]);
+            Reply(player, info, "optimizer.debug.started", entitiesToClearQueue.Count);
            // Server.PrintToConsole($"[SW DEBUG] Started removing {entitiesToClearQueue.Count} entities.");
 
             // 2. Start the safe, repeatable CSS timer
@@ -167,7 +198,7 @@ namespace SmoothWizardOptimizer
                 debugTimer = null;
                 entitiesToClearQueue.Clear();
                // Server.PrintToConsole("[SW DEBUG] Entity removal loop finished.");
-                Server.PrintToChatAll(Localizer["optimizer.debug.finished"]);
+                ChatAll("optimizer.debug.finished");
                 return;
             }
 
@@ -253,7 +284,7 @@ namespace SmoothWizardOptimizer
                             if (removedTotal > 0)
                             {
                                 Console.WriteLine(Localizer["optimizer.cleared.console", context, removedTotal]);
-                                Server.PrintToChatAll(Localizer["optimizer.cleared.chat", removedTotal]);
+                                ChatAll("optimizer.cleared.chat", removedTotal);
                             }
                         }
                     });

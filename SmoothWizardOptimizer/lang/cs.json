@@ -1,0 +1,10 @@
+{
+  "optimizer.cleared.console": "[SmoothWizard Optimizer] [{0}] Vyčištěno. Odstraněno objektů: {1}",
+  "optimizer.cleared.chat": "[{red}SmoothWizard Server Optimizer{default}] Úklid hotov. Odstraněno {green}{0}{default} smetí a efektů.",
+  "optimizer.toggle.on": "[{green}SW Optimizer{default}] Optimalizace serveru je teď: {green}ZAPNUTÁ{default}",
+  "optimizer.toggle.off": "[{green}SW Optimizer{default}] Optimalizace serveru je teď: {red}VYPNUTÁ{default}",
+  "optimizer.debug.finished": "[{red}SmoothWizard{default}] Smyčka mazání skončila.",
+  "optimizer.debug.started": "[{red}SmoothWizard{default}] Mažu {0} objektů. Zastavíš příkazem css_sw_stop.",
+  "optimizer.debug.stopped": "[{red}SmoothWizard{default}] Smyčka mazání zastavena.",
+  "optimizer.debug.empty": "[{red}SmoothWizard{default}] Žádné objekty k odstranění."
+}

@@ -4,5 +4,7 @@
   "optimizer.toggle.on": "[{green}SW Optimizer{default}] Server map optimizer is now: {green}ON{default}",
   "optimizer.toggle.off": "[{green}SW Optimizer{default}] Server map optimizer is now: {red}OFF{default}",
   "optimizer.debug.finished": "[{red}SmoothWizard{default}] Entity removal loop finished.",
-  "optimizer.debug.started": "[{red}SmoothWizard{default}] Started removing {0} entities. Use css_sw_stop to stop."
+  "optimizer.debug.started": "[{red}SmoothWizard{default}] Started removing {0} entities. Use css_sw_stop to stop.",
+  "optimizer.debug.stopped": "[{red}SmoothWizard{default}] Entity removal loop stopped.",
+  "optimizer.debug.empty": "[{red}SmoothWizard{default}] No entities found to remove."
 }

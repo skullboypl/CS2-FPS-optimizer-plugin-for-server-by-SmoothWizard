@@ -1,0 +1,10 @@
+{
+  "optimizer.cleared.console": "[SmoothWizard Optimizer] [{0}] Siivottu. Poistetut kohteet: {1}",
+  "optimizer.cleared.chat": "[{red}SmoothWizard Server Optimizer{default}] Siivous valmis. Poistettiin {green}{0}{default} roskaa ja tehostetta.",
+  "optimizer.toggle.on": "[{green}SW Optimizer{default}] Palvelimen optimointi on nyt: {green}PÄÄLLÄ{default}",
+  "optimizer.toggle.off": "[{green}SW Optimizer{default}] Palvelimen optimointi on nyt: {red}POIS{default}",
+  "optimizer.debug.finished": "[{red}SmoothWizard{default}] Poistosilmukka päättyi.",
+  "optimizer.debug.started": "[{red}SmoothWizard{default}] Poistetaan {0} kohdetta. Pysäytä komennolla css_sw_stop.",
+  "optimizer.debug.stopped": "[{red}SmoothWizard{default}] Poistosilmukka pysäytettiin.",
+  "optimizer.debug.empty": "[{red}SmoothWizard{default}] Ei poistettavia kohteita."
+}

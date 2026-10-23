@@ -1,0 +1,10 @@
+{
+  "optimizer.cleared.console": "[SmoothWizard Optimizer] [{0}] Bereinigt. Entfernte Objekte: {1}",
+  "optimizer.cleared.chat": "[{red}SmoothWizard Server Optimizer{default}] Aufräumen fertig. {green}{0}{default} Müll und Effekte entfernt.",
+  "optimizer.toggle.on": "[{green}SW Optimizer{default}] Server-Optimierung ist jetzt: {green}AN{default}",
+  "optimizer.toggle.off": "[{green}SW Optimizer{default}] Server-Optimierung ist jetzt: {red}AUS{default}",
+  "optimizer.debug.finished": "[{red}SmoothWizard{default}] Entfernungsschleife beendet.",
+  "optimizer.debug.started": "[{red}SmoothWizard{default}] Entferne {0} Objekte. Stopp mit css_sw_stop.",
+  "optimizer.debug.stopped": "[{red}SmoothWizard{default}] Entfernungsschleife gestoppt.",
+  "optimizer.debug.empty": "[{red}SmoothWizard{default}] Keine Objekte zum Entfernen gefunden."
+}

@@ -1,0 +1,10 @@
+{
+  "optimizer.cleared.console": "[SmoothWizard Optimizer] [{0}] Limpieza lista. Objetos sacados: {1}",
+  "optimizer.cleared.chat": "[{red}SmoothWizard Server Optimizer{default}] Listo. Saqué {green}{0}{default} basura y efectos.",
+  "optimizer.toggle.on": "[{green}SW Optimizer{default}] La optimización del server quedó: {green}PRENDIDA{default}",
+  "optimizer.toggle.off": "[{green}SW Optimizer{default}] La optimización del server quedó: {red}APAGADA{default}",
+  "optimizer.debug.finished": "[{red}SmoothWizard{default}] Ya terminó el ciclo de borrado.",
+  "optimizer.debug.started": "[{red}SmoothWizard{default}] Borrando {0} objetos. Para parar: css_sw_stop.",
+  "optimizer.debug.stopped": "[{red}SmoothWizard{default}] Se detuvo el ciclo de borrado.",
+  "optimizer.debug.empty": "[{red}SmoothWizard{default}] No encontré objetos para borrar."
+}

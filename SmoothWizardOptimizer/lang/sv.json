@@ -1,0 +1,10 @@
+{
+  "optimizer.cleared.console": "[SmoothWizard Optimizer] [{0}] Städat. Borttagna objekt: {1}",
+  "optimizer.cleared.chat": "[{red}SmoothWizard Server Optimizer{default}] Städning klar. Tog bort {green}{0}{default} skräp och effekter.",
+  "optimizer.toggle.on": "[{green}SW Optimizer{default}] Serveroptimering är nu: {green}PÅ{default}",
+  "optimizer.toggle.off": "[{green}SW Optimizer{default}] Serveroptimering är nu: {red}AV{default}",
+  "optimizer.debug.finished": "[{red}SmoothWizard{default}] Borttagningsloopen är klar.",
+  "optimizer.debug.started": "[{red}SmoothWizard{default}] Tar bort {0} objekt. Stoppa med css_sw_stop.",
+  "optimizer.debug.stopped": "[{red}SmoothWizard{default}] Borttagningsloopen stoppades.",
+  "optimizer.debug.empty": "[{red}SmoothWizard{default}] Inga objekt att ta bort."
+}

@@ -56,3 +56,5 @@ The plugin uses the CSSHarp permission system for feature control.
 | `css_sw_toggle` | Toggles automatic cleanup (`!sw_toggle` in chat). Reply includes the same state line. |
 | `css_sw_clear` | Starts the entity removal loop (debug mode). |
 | `css_sw_stop` | Stops the entity removal loop (debug mode). |
+
+Chat uses the player's CounterStrikeSharp language (`css_lang`, for example `pl` or `pt-BR`). The RCON lines `smoothwizard_state on` and `smoothwizard_state off` stay English. Language files live in `lang/` next to the DLL. `en` is the fallback.

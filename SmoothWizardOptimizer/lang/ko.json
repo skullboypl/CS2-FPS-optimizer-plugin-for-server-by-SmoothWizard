@@ -1,0 +1,10 @@
+{
+  "optimizer.cleared.console": "[SmoothWizard Optimizer] [{0}] 정리 완료. 제거한 엔티티: {1}",
+  "optimizer.cleared.chat": "[{red}SmoothWizard Server Optimizer{default}] 정리가 끝났습니다. 쓰레기와 효과 {green}{0}{default}개를 지웠습니다.",
+  "optimizer.toggle.on": "[{green}SW Optimizer{default}] 서버 최적화 상태: {green}켜짐{default}",
+  "optimizer.toggle.off": "[{green}SW Optimizer{default}] 서버 최적화 상태: {red}꺼짐{default}",
+  "optimizer.debug.finished": "[{red}SmoothWizard{default}] 삭제 반복이 끝났습니다.",
+  "optimizer.debug.started": "[{red}SmoothWizard{default}] 엔티티 {0}개 삭제 중. 멈추려면 css_sw_stop.",
+  "optimizer.debug.stopped": "[{red}SmoothWizard{default}] 삭제 반복을 멈췄습니다.",
+  "optimizer.debug.empty": "[{red}SmoothWizard{default}] 지울 엔티티가 없습니다."
+}
