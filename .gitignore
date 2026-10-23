@@ -364,3 +364,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Local release zip. The signed DLL is uploaded as a GitHub Release asset.
+dist/
