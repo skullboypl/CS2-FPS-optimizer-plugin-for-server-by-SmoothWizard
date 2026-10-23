@@ -192,6 +192,9 @@ publish/
 # in these scripts will be unencrypted
 PublishScripts/
 
+# Local release staging. The signed DLL is uploaded to GitHub Releases.
+dist/
+
 # NuGet Packages
 *.nupkg
 # NuGet Symbol Packages

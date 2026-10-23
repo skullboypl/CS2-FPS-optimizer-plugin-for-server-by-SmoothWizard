@@ -39,7 +39,7 @@ The plugin employs an aggressive **entity cleanup** strategy at the start of eve
     ```
     /game/csgo/addons/counterstrikesharp/plugins/SmoothWizardOptimizer/
     ```
-3.  Place the downloaded `SmoothWizardOptimizer.dll` file inside this new folder.
+3.  Place `SmoothWizardOptimizer.dll` in that folder, and copy the `lang` folder next to it (`lang/en.json`). Chat lines live in that file. Add another `lang/<code>.json` (same keys) if you want a different language. The RCON line `smoothwizard_state on` / `smoothwizard_state off` stays in English so panels can read it.
 4.  Start (or restart) your CS2 server.
 
 ## 🖥️ Command to disable optimizer or enable
@@ -48,8 +48,11 @@ The plugin uses the CSSHarp permission system for feature control.
 
 ### Commands
 
-| Command           | Description                                                        | Required Permission |
-| :---------------- | :----------------------------------------------------------------- | :------------------ |
-| `css_sw_toggle`   | Toggles the automatic entity cleanup on or off (`!sw_toggle` in chat) | None Yet         |
-| `css_sw_clear`    | Starts the entity removal loop (debug mode)                        | None Yet         |
-| `css_sw_stop`     | Stops the entity removal loop (debug mode)           
+| Command | Description |
+| :--- | :--- |
+| `css_sw_on` | Turns automatic cleanup on. Reply includes `smoothwizard_state on`. |
+| `css_sw_off` | Turns automatic cleanup off. Reply includes `smoothwizard_state off`. |
+| `css_sw_status` | Prints the current state as `smoothwizard_state on` or `smoothwizard_state off`. |
+| `css_sw_toggle` | Toggles automatic cleanup (`!sw_toggle` in chat). Reply includes the same state line. |
+| `css_sw_clear` | Starts the entity removal loop (debug mode). |
+| `css_sw_stop` | Stops the entity removal loop (debug mode). |

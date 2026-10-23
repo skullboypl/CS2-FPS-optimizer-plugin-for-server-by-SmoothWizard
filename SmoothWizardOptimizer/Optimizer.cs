@@ -1,6 +1,5 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
-using CounterStrikeSharp.API.Modules.Utils;
 using CounterStrikeSharp.API.Modules.Events;
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Timers; 
@@ -14,7 +13,7 @@ namespace SmoothWizardOptimizer
     public class SmoothWizardOptimizer : BasePlugin
     {
         public override string ModuleName => "SmoothWizard Server Optimizer";
-        public override string ModuleVersion => "1.0.1";
+        public override string ModuleVersion => "1.1.0";
         public override string ModuleAuthor => "SkullMedia Artur Spychalski";
 
         private bool isOptimizationEnabled = true;
@@ -50,10 +49,13 @@ namespace SmoothWizardOptimizer
         {
             RegisterEventHandler<EventRoundStart>(OnRoundStart);
             AddCommand("css_sw_toggle", "Toggles the SmoothWizard server optimization cleanup on/off.", OnToggleOptimizerCommand);
+            AddCommand("css_sw_on", "Turns SmoothWizard server optimization on.", OnEnableOptimizerCommand);
+            AddCommand("css_sw_off", "Turns SmoothWizard server optimization off.", OnDisableOptimizerCommand);
+            AddCommand("css_sw_status", "Prints smoothwizard_state on or off.", OnStatusOptimizerCommand);
             AddCommand("css_sw_clear", "Starts the entity removal loop from the list. DEBUG", OnClearEntitiesLoopCommand);
             AddCommand("css_sw_stop", "Stops the entity removal loop. DEBUG", OnStopClearLoopCommand);
 
-            Server.PrintToConsole($"[SmoothWizard Server Optimizer] Loaded successfully (v{ModuleVersion}). Optimization: {(isOptimizationEnabled ? "ON" : "OFF")}.");
+            Server.PrintToConsole($"[SmoothWizard Server Optimizer] Loaded successfully (v{ModuleVersion}). {StateLine()}");
         }
 
         public override void Unload(bool hotReload)
@@ -69,15 +71,44 @@ namespace SmoothWizardOptimizer
             }
             return HookResult.Continue;
         }
+        private string StateLine() => isOptimizationEnabled ? "smoothwizard_state on" : "smoothwizard_state off";
+
+        /// <summary>
+        /// One stable line for RCON. The panel parses "smoothwizard_state on" or "smoothwizard_state off".
+        /// Printed synchronously so the RCON response can include it.
+        /// </summary>
+        private void PublishState(CommandInfo info)
+        {
+            string line = StateLine();
+            Server.PrintToConsole(line);
+            info.ReplyToCommand(line);
+        }
+
+        private void OnEnableOptimizerCommand(CCSPlayerController? player, CommandInfo info)
+        {
+            isOptimizationEnabled = true;
+            PublishState(info);
+        }
+
+        private void OnDisableOptimizerCommand(CCSPlayerController? player, CommandInfo info)
+        {
+            isOptimizationEnabled = false;
+            PublishState(info);
+        }
+
+        private void OnStatusOptimizerCommand(CCSPlayerController? player, CommandInfo info)
+        {
+            PublishState(info);
+        }
+
         private void OnToggleOptimizerCommand(CCSPlayerController? player, CommandInfo info)
         {
             isOptimizationEnabled = !isOptimizationEnabled;
-            string statusColor = isOptimizationEnabled ? ChatColors.Green.ToString() : ChatColors.Red.ToString();
-            string statusText = isOptimizationEnabled ? "ON" : "OFF";
-
-            string chatMessage = $"[{ChatColors.Green}SW Optimizer{ChatColors.White}] Server map optimizer is now: {statusColor}{statusText}{ChatColors.White}";
-            //Server.PrintToChatAll(chatMessage);
-            info.ReplyToCommand($"{chatMessage}");
+            PublishState(info);
+            if (player is { IsValid: true })
+            {
+                player.PrintToChat(Localizer[isOptimizationEnabled ? "optimizer.toggle.on" : "optimizer.toggle.off"]);
+            }
         }
 
         private void OnStopClearLoopCommand(CCSPlayerController? player, CommandInfo info)
@@ -120,7 +151,7 @@ namespace SmoothWizardOptimizer
             }
 
             clearLoopActive = true;
-            info.ReplyToCommand($"[{ChatColors.Red}SmoothWizard{ChatColors.White}]Started removing {entitiesToClearQueue.Count} entities. Use css_sw_dstop to stop.");
+            info.ReplyToCommand(Localizer["optimizer.debug.started", entitiesToClearQueue.Count]);
            // Server.PrintToConsole($"[SW DEBUG] Started removing {entitiesToClearQueue.Count} entities.");
 
             // 2. Start the safe, repeatable CSS timer
@@ -136,7 +167,7 @@ namespace SmoothWizardOptimizer
                 debugTimer = null;
                 entitiesToClearQueue.Clear();
                // Server.PrintToConsole("[SW DEBUG] Entity removal loop finished.");
-                Server.PrintToChatAll($"[{ChatColors.Red}SmoothWizard{ChatColors.White}] Entity removal loop finished.");
+                Server.PrintToChatAll(Localizer["optimizer.debug.finished"]);
                 return;
             }
 
@@ -221,9 +252,8 @@ namespace SmoothWizardOptimizer
                             // has been processed by Server.NextFrame.
                             if (removedTotal > 0)
                             {
-                                Console.WriteLine($"[SmoothWizard Optimizer] [{context}] Cleared. Total entities removed: {removedTotal}");
-                                string chatMessage = $"[{ChatColors.Red}SmoothWizard Server Optimizer{ChatColors.White}] Cleanup completed. Removed {ChatColors.Green}{removedTotal}{ChatColors.White} map junk/effects.";
-                                Server.PrintToChatAll(chatMessage);
+                                Console.WriteLine(Localizer["optimizer.cleared.console", context, removedTotal]);
+                                Server.PrintToChatAll(Localizer["optimizer.cleared.chat", removedTotal]);
                             }
                         }
                     });
